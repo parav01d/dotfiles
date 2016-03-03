@@ -10,6 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git sudo web-search wd zsh-syntax-highlighting)
 
 export PATH="User/groot/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/groot/.rvm/bin"
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,6 +18,7 @@ function iterm2_print_user_vars() {
   iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
 }
 
+alias composer="php /usr/local/bin/composer.phar"
 alias run='python -m SimpleHTTPServer 9000'
 alias log='sh ~/Work/Paranoid/logs/log.sh'
 alias ll='ls -lA'
